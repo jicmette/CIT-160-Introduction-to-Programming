@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repetition</title>
+    <script>
+        // Input: The user enters an integer
+        // Processing: The program finds the odds 
+        // Output: The sum of odds
+        function sumOdd() {
+            let in_user = parseFloat(document.getElementById("userInput").value); 
+            let n = 0;
+
+            for (let i = 1; i <= in_user; i += 2)
+           {
+                n = n + i;
+                console.log(i)
+            }
+            document.getElementById("inoutput").innerHTML = "The sum of odd numbers is: " + n;
+        }
+            
+    </script>
+</head>
+<body>
+    <h1>Type an integer</h1>
+    <input type="text" id="userInput">
+    <button type="button" onclick="sumOdd()">Sum</button>
+    <div id="inoutput"></div>
+</body>
+</html>

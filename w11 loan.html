@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <title>Loan</title>
+ <script>
+
+    function doPayment()
+    {
+      let amBorr = parseFloat(document.getElementById("borrowed").value);
+      let AnnIRate = parseFloat(document.getElementById("AnnualIrate").value);
+      let numYear = parseFloat(document.getElementById("Nyears").value);
+      let Pperyear = parseFloat(document.getElementById("Ppyear").value);
+
+      let pay = computePayment(amBorr, AnnIRate, numYear, Pperyear);
+      document.getElementById("compPayDiv").innerHTML = "$" + pay.toFixed(2);
+    }
+
+    function doBalance()
+    {
+      let amBorr = parseFloat(document.getElementById("borrowed").value);
+      let AnnIRate = parseFloat(document.getElementById("AnnualIrate").value);
+      let numYear = parseFloat(document.getElementById("Nyears").value);
+      let Pperyear = parseFloat(document.getElementById("Ppyear").value);
+      let NPptodat = parseFloat(document.getElementById("NPptodate").value);
+
+      let compBal = computeBalance(amBorr, AnnIRate, numYear, Pperyear, NPptodat);
+      document.getElementById("compBalDiv").innerHTML = "$" + compBal.toFixed(2);
+    }
+
+    function computePayment(amBorr, AnnIRate, numYear, Pperyear)
+    {
+      let compPay = (amBorr *(AnnIRate / Pperyear)) / (1 - ((1 + (AnnIRate / Pperyear)) ** - (numYear * Pperyear)));
+      return compPay;
+    }
+
+    function computeBalance(amBorr, AnnIRate, numYear, Pperyear, NPptodat)
+    {
+      let pay = (amBorr * (AnnIRate / Pperyear)) / (1 - ((1 + (AnnIRate / Pperyear)) ** - (numYear * Pperyear)));
+      let compBal = (amBorr * (1 + (AnnIRate / Pperyear)) ** NPptodat) - ((pay * (((1 + (AnnIRate / Pperyear)) ** NPptodat) - 1)) / (AnnIRate / Pperyear));
+      return compBal; 
+    }
+
+ </script>
+</head>
+<body>
+  <h1>Investment Calculator</h1>
+    <p>Amount borrowed (principal) <input type="text" id="borrowed"></p>
+    <p>Annual interest rate (example: .065) <input type="text" id="AnnualIrate"></p>
+    <p>Number of years <input type="text" id="Nyears"></p>
+    <p>Payments per year <input type="text" id="Ppyear"></p>
+    <button type="button" onclick="doPayment()">Compute payment</button>
+    <div id="compPayDiv"></div>
+
+    <p>Number of payments paid to date <input type="text" id="NPptodate"></p>
+    <button type="button" onclick="doBalance()">Compute payoff amount</button>
+    <div id="compBalDiv"></div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <title>Average</title>
+  <script>
+    let list = [70, 1010, 950, 2014, 6];
+    let score = averageBig(list);
+
+function averageBig(score){ 
+  let totalSum = 0;
+  let numsCount = 0;
+
+  
+    for(let i in list) 
+    {
+      if(list > 1000)
+      {
+        totalSum += list;
+        numsCount++;
+      }
+    }
+
+    let average = 0;
+
+      if(numsCount > 0)
+      {
+        average = totalSum / numsCount;
+        return average;
+      }
+}
+  </script>
+</head>
+<body>
+  <h1>Average</h1>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <title>Arrays</title>
+  <script>
+      /* Defining Table
+        * Input: no user input
+        * Processing: Test the addEnds and getMiddle functions by calling them.
+        * Output: The values returned from the addEnds and getMiddle functions.
+        */
+      function test() 
+      {
+          let list1= [17, 8, 9, 5, 20];
+          let list2 = [12, 4, 8, 15, 17, 5, 20, 11];
+          
+          let sum1 = addEnds(list1);
+          let sum2 = addEnds(list2);
+          
+          let mid1 = getMiddle(list1);
+          let mid2 = getMiddle(list2);
+
+          let output = sum1 + '<br>' + sum2 + '<br>' + mid1 + '<br>' + mid2;
+
+          document.getElementById("addOut").innerHTML = output;
+      }
+      function addEnds(list) 
+      {
+          return list[0] + list[list.length - 1];  
+      }
+
+      function getMiddle(list)
+      {
+        let left = 0;
+        let right = list.length -1;
+        let middle = left + ((right - left) >>> 1);
+        if (list.length % 2 == 0) 
+        {
+          return (list[middle] + list[middle + 1]) / 2;
+        } else
+        {
+          return list[middle];
+        }
+      }
+
+  </script>
+</head>
+<body>
+  <h1>Arrays</h1>
+  <button type="button" onclick="test()">Click</button>
+  <div id="addOut"></div>
+</body>
+</html>

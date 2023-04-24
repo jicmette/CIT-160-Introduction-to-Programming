@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quartsToLiters</title>
+    <script>
+        /* Input: The amount of quarts that the user writes
+         * Processing: The formula converts quarts to liters
+         * Output: The amount of quarts in liters
+         */
+        function Quarts() {
+            // This line stores the amount of quarts introduced by the user
+            var quarts = parseFloat(document.getElementById('quartsInput').value);
+
+            // How many liters is a quart
+            var liter_1 = "0.946353"
+
+            // The formula to get liters
+            var liters = liter_1 * quarts
+
+            // This line shows the result to the user
+            document.getElementById('quartDiv').innerHTML = quarts + " quart(s) are " + liters + " liters";
+        }
+    </script>
+</head>
+<body>
+    Quart(s) <input type="text" id="quartsInput">
+    <button type="button" onclick="Quarts()">Enter</button>
+    <div id="quartDiv"></div>
+</body>
+</html>

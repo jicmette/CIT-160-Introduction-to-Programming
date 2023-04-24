@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discount</title>
+    <script>
+        // input: customer subtotal
+        // processing: if the subtotal is greater than $50 and today is Tuesday or Wednesday, subtracts 10% from the subtotal
+        // output: total sale + tax
+        function saleDis() {
+            let subtotal = parseFloat(document.getElementById("subtotal").value);
+            console.log(subtotal);
+            let dayOfWeek = new Date().getDay();
+            console.log(dayOfWeek); 
+
+            if((subtotal >= 50.00) && (dayOfWeek == 2 || dayOfWeek == 3))
+            {
+                ten_percent = subtotal * .10
+                discount = subtotal - ten_percent 
+                tax = discount * .06
+                total = discount + tax 
+                document.getElementById("amountOutput").innerHTML = "You have to pay " + total 
+            }else 
+            {
+                without1 = subtotal * .06
+                total2 = subtotal + without1
+                document.getElementById("amountOutput").innerHTML = "The amount to pay is " + total2
+            }
+        }
+    </script>
+</head>
+<body>
+    <label>Enter subtotal</label>
+    <input type="text" id="subtotal">
+    <button onclick="saleDis()">Checkout</button>
+    <div id="amountOutput"></div>
+</body>
+</html>

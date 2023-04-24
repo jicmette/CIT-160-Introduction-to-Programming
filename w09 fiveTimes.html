@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Five Times</title>
+    <script>
+        // Input: A click on button 
+        // Processing: The program uses loop to develop the table
+        // Output: The five times table
+        function fiveTimes() {
+            let shows_user = " ";
+
+            for (let i = 1; i <= 12; i++)
+           {
+                let fiveT = 5; 
+                let times = fiveT * i;
+                shows_user += fiveT + " x " + i + " = " + times + "<br>";
+                console.log(i)
+            }
+            document.getElementById("fiveOut").innerHTML = shows_user
+        }
+            
+    </script>
+</head>
+<body>
+    <h1>Five Times Table</h1>
+    <button type="button" onclick="fiveTimes()">Show table</button>
+    <div id="fiveOut"></div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>TwoNumbers</title>
+<script>
+/* Input: The user enters two numbers
+ * Processing: If both numbers are greater than 5 or their sum greater than 20
+ * Output: "True" or "False"
+ */
+        function twoNumbers(){
+            let firstN = parseFloat(document.getElementById("one").value);
+            let secondN = parseFloat(document.getElementById("two").value);
+
+            if (firstN > 5 && secondN > 5)
+            {
+                document.getElementById("output").innerHTML = "True";
+            } else if (firstN + secondN > 20)
+            {
+                document.getElementById("output").innerHTML = "True";
+            } else
+            {
+                document.getElementById("output").innerHTML = "False";
+            } 
+        } 
+
+</script>
+</head>
+
+<body>
+Please enter two numbers:
+<input type="text" id="one" size="5">
+<input type="text" id="two" size="5">
+<button type="button" onclick="twoNumbers()">Click</button>
+<div id="output"></div>
+</body>
+</html>

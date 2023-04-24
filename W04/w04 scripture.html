@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scripture</title>
+    <script>
+        function applyScripture() {
+            let name = document.getElementById('nameInputBox').value;
+            let scripture = "And I " + name + " will not deny the Christ; wherefore," +
+            " I wander whithersoever I can for the safety of mine own life.";
+            document.getElementById('outputDiv').innerHTML = scripture;
+        }
+    </script>
+</head>
+<body>
+    Enter your name here: <input type="text" id="nameInputBox">
+    <button type="button" onclick="applyScripture()">See verse</button>
+    <div id="outputDiv"></div>
+</body>
+</html>

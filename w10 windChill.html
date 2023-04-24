@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <title>windChill</title>
+ <script>
+    function doInputOutput()
+    {
+      let temp1 = parseInt(document.getElementById("Temperature").value);
+      let spd1 = parseInt(document.getElementById("WindSpeed").value);
+
+      windChill(temp1, spd1);
+      windStored = windChill(temp1, spd1)
+      document.getElementById("windDiv").innerHTML = "The wind chill factor is " + windStored;
+    }
+
+    function windChill(tempF, speed)
+    {
+      var formula_1 = 35.74 + (0.6215 * tempF) - 35.75 * Math.pow(speed, 0.16) + 0.4275 * tempF * Math.pow(speed, 0.16);
+      return formula_1
+    }
+    
+ </script>
+</head>
+<body>
+  <h2>Wind Chill</h2>
+    Temperature <input type="text" id="Temperature">
+    Wind Speed <input type="text" id="WindSpeed">
+    <button type="button" onclick="doInputOutput()">Wind Chill</button>
+    <div id="windDiv"></div>
+</body>
+</html>

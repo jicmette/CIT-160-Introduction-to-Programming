@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Depreciation</title>
+<script>
+function forDep(){
+    let startValue = parseFloat(document.getElementById("startValue").value);
+    let endValue = parseInt(document.getElementById("endValue").value);
+    let months = parseInt(document.getElementById("months").value);
+    
+      depT = depreciation(startValue, endValue, months);
+      document.getElementById("outDep").innerHTML = "Depreciation is " + depT.toFixed(2);
+    }
+    
+    
+    function depreciation(startValue, endValue, months)
+    {
+        let depreciation;
+        let depT= (startValue - endValue) / months;
+        return depT;
+    }
+</script>
+</head>
+
+<body>
+Start Value <input type="text" id="startValue">
+End Value <input type="text" id="endValue">
+Months <input type="text" id="months">
+<button type="button" onclick="forDep()">Click</button>
+<div id="outDep"></div>
+</body>
+</html>

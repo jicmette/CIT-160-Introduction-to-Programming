@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <title>Invest</title>
+ <script>
+    function doFV()
+    {
+      let invIn = parseFloat(document.getElementById("invested").value);
+      let AnnRate = parseFloat(document.getElementById("Annualrate").value);
+      let NumYears = parseFloat(document.getElementById("Nyears").value);
+      let Pperyear = parseFloat(document.getElementById("Ppyear").value);
+
+      future_val = computeFutureValue(invIn, AnnRate, NumYears, Pperyear);
+      document.getElementById("invOut").innerHTML = "The future value is $" + future_val.toFixed(2);
+    }
+
+    function computeFutureValue(invIn, AnnRate, NumYears, Pperyear)
+    {
+      var future_val = invIn * (1 + AnnRate / Pperyear) ** (Pperyear * NumYears);
+      return future_val;
+    }
+ </script>
+</head>
+<body>
+  <h1>Invest</h1>
+    <p>Amount invested (principal) <input type="text" id="invested"></p>
+    <p>Annual rate (example: .08) <input type="text" id="Annualrate"></p>
+    <p>Number of years <input type="text" id="Nyears"></p>
+    <p>Periods per year <input type="text" id="Ppyear"></p>
+    <button type="button" onclick="doFV()">Compute future value</button>
+    <div id="invOut"></div>
+</body>
+</html>

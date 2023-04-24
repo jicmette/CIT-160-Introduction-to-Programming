@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Powers</title>
+    <script>
+        // Input: The user just needs to use the button
+        // Processing: The program uses loop to develop the table 
+        // Output: Shows all powers of 2
+        function powersT() {
+            let showPower = " ";
+
+            for (let i = 1; i <= 31; i++)
+           {
+                let number_2 = 2; 
+                let power2 = Math.pow(number_2, i);
+                showPower += number_2 + " ^ " + i + " = " + power2 + "<br>";
+                console.log(i)
+            }
+            document.getElementById("powersOut").innerHTML = showPower
+        }
+            
+    </script>
+</head>
+<body>
+    <h1>Powers</h1>
+    <button type="button" onclick="powersT()">Show table</button>
+    <div id="powersOut"></div>
+</body>
+</html>

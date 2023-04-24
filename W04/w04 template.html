@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template</title>
+    <script>
+        function Place() {
+            let place = document.getElementById('placeInput').value;
+            let welcome = place + " is a beautiful place! Welcome!";
+            document.getElementById('placeOutput').innerHTML = welcome;
+        }
+    </script>
+</head>
+<body>
+    Welcome to my web page, where are you from? <input type="text" id="placeInput">
+    <button type="button" onclick="Place()">Enter</button>
+    <div id="placeOutput"></div>
+</body>
+</html>

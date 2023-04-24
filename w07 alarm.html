@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarm</title>
+    <script>
+        // input: A click from the user to know what to do today
+        // processing: The program will tell the user what to do
+        // output: if today is a weekday, the programm will tell the user to Get up! otherwise the program will say Sleep in!
+        function alarm() {
+            var now = new Date();
+            var month = now.getMonth();
+            var dayOfMonth = now.getDate();
+            var dayOfWeek = now.getDay(); 
+            console.log(dayOfWeek);
+            
+            if(month == 0 && dayOfMonth == 1)
+            {
+                alert("Sleep in!");
+                document.write("Happy New Year!")
+
+            }else if(month == 6 && dayOfMonth == 4)
+            {
+                alert("Sleep in!");
+                document.write("Happy Independence Day!")
+
+            }else if(month == 11 && dayOfMonth == 25)
+            {
+                alert("Sleep in!");
+                document.write("Merry Christmas!")
+
+            }else if(dayOfWeek == 0 || dayOfWeek == 6)
+            {
+                alert("Sleep in!");
+                document.write("Today is weekend!")
+
+            }else if(dayOfWeek == 1 || dayOfWeek == 2 || dayOfWeek == 3 || dayOfWeek == 4 || dayOfWeek == 5)
+            {
+                alert("Get up!");
+                document.write("Today is a weekday, let's go to work!")
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="alarm()">What should I do?</button>
+    <div id="alarm1"></div>
+</body>
+</html>

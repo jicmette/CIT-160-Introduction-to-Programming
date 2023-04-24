@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Volume of a Torus</title>
+<script>
+    /* Input: The user enters the inner radious and the outer radious
+         * Processing: The formula calculates volume
+         * Output: The user gets the volume of the torus 
+         */
+         function computeVolume() {
+            // The inner radious
+            let innerR = parseFloat(document.getElementById('inner').value);
+            // The outer radious
+            let outerR = parseFloat(document.getElementById('outer').value);
+            // The formula of volume
+            let one1 = innerR + outerR;
+            let one2 = innerR - outerR;
+            let one3 = Math.sqrt(one1 * one2)
+            let volume1 = Math.PI * one3 / 4
+            // This line displays the result
+            document.getElementById('volume').innerHTML = volume1;
+
+</script>
+</head>
+
+<body>
+    <h1>Volume of a Torus</h1>
+    Inner radius <input type="text" id="inner"><br>
+    Outer radius <input type="text" id="outer"><br>
+    <button type="button" onclick="computeVolume()">Volume</button><br>
+    Volume <div id="volume"></div>
+</body>
+</html>

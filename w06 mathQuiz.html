@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mathQuiz</title>
+    <script>
+        /* Input: The user enters two numbers, an operator and the result
+         * Processing: The program checks the answer
+         * Output: Correct and Try Again
+         */
+        function mathQuiz() {
+            let firstN = parseFloat(document.getElementById("firstNumber").value);
+            let operSign = document.getElementById("operator").value;
+            let secondN = parseFloat(document.getElementById("secondNumber").value);
+            let answer = parseFloat(document.getElementById("answer").value);
+            let corrAnswer;
+
+            if(operSign == "+")
+            {
+                corrAnswer = firstN + secondN
+            }else if(operSign == "-")
+            {
+                corrAnswer = firstN - secondN
+            }else if(operSign == "*")
+            {
+                corrAnswer = firstN * secondN
+            }else if(operSign == "/")
+            {
+                corrAnswer = firstN / secondN
+            }
+
+            if(answer == corrAnswer)
+            { 
+                document.write("Correct! Good job.")
+            } 
+            else 
+            {
+                document.write("Incorrect! Try again!")
+            }
+        }       
+    </script>
+</head>
+<body>
+<h1>Try your math skills!</h1>
+    Number <input type="text" id="firstNumber">
+    Operator <input type="text" id="operator">
+    Number <input type="text" id="secondNumber"><span>=</span>
+    <input type="text" id="answer">
+    <button type="button" onclick="mathQuiz()">Check</button>
+    <div id="outputDiv"></div>
+</body>
+</html>
